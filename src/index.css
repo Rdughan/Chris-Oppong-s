@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-normal m-0;
+    letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 144;
+  }
+  p {
+    @apply m-0;
+  }
+  section {
+    scroll-margin-top: 72px;
+  }
+  :focus-visible {
+    outline: 3px solid theme("colors.forest");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .dark :focus-visible {
+    outline-color: theme("colors.ivory");
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply max-w-wrap mx-auto px-5 sm:px-8;
+  }
+  .band {
+    padding-top: clamp(64px, 9vw, 112px);
+    padding-bottom: clamp(64px, 9vw, 112px);
+  }
+  .h2-base {
+    line-height: 1.12;
+    text-wrap: balance;
+    font-size: clamp(1.9rem, 1.25rem + 2.6vw, 3rem);
+  }
+  .lede {
+    @apply max-w-[60ch] text-muted;
+  }
+
+  .btn {
+    @apply inline-block font-medium text-base leading-none no-underline rounded-md border border-forest bg-forest text-paper transition-colors duration-200;
+    padding: 16px 22px;
+  }
+  .btn:hover {
+    @apply bg-ink border-ink;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-forest;
+  }
+  .btn-ghost:hover {
+    @apply bg-forest text-paper;
+  }
+  .dark .btn {
+    @apply bg-ivory border-ivory text-forest;
+  }
+  .dark .btn:hover {
+    @apply bg-white border-white;
+  }
+  .dark .btn-ghost {
+    @apply bg-transparent text-ivory border-ivory;
+  }
+  .dark .btn-ghost:hover {
+    @apply bg-ivory text-forest;
+  }
+
+  .kicker {
+    @apply text-[0.82rem] font-semibold uppercase text-gold mb-[18px];
+    letter-spacing: 0.16em;
+  }
+
+  .pull {
+    @apply font-serif text-forest border-l-2 border-gold my-2;
+    padding-left: 20px;
+    line-height: 1.4;
+    font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  }
+
+  .figcap {
+    @apply mt-3.5 pl-3.5 border-l-2 border-gold text-[0.92rem] leading-relaxed text-muted max-w-[52ch];
+  }
+
+  .todo {
+    @apply bg-flag px-1.5 py-0.5 rounded;
+  }
+
+  .stat-num {
+    @apply font-serif font-medium text-forest;
+    font-variation-settings: "opsz" 144;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    font-size: clamp(2.6rem, 1.9rem + 3vw, 4.4rem);
+  }
+  .stat-rule {
+    @apply bg-gold rounded;
+    width: 30px;
+    height: 3px;
+    margin: 16px 0 12px;
+  }
+  .stat-label {
+    @apply text-[0.85rem] font-semibold uppercase text-muted;
+    letter-spacing: 0.13em;
+  }
+}
