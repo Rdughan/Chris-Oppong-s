@@ -1,7 +1,7 @@
 export const contact = {
   whatsapp: "https://wa.me/233248634726",
   email: "steppingforachange@gmail.com",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/chris-oppong/",
 };
 
 export const tagline = "Building people. Building possibilities.";
